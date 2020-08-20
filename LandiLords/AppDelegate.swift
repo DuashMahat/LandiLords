@@ -11,9 +11,10 @@ import CoreData
 import Firebase
 import FirebaseDatabase
 import SVProgressHUD
+import  FirebaseMessaging
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate , MessagingDelegate  {
 
      var window: UIWindow?
     static var standard: AppDelegate {
@@ -22,8 +23,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        Messaging.messaging().delegate = self
 //        let myDatabase = Database.database().reference()
 //        myDatabase.setValue("Testing")
+        
+        if #available(iOS 10.0, *) {
+          // For iOS 10 display notification (sent via APNS)
+          UNUserNotificationCenter.current().delegate = self
+
+          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+          UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: {_, _ in })
+        } else {
+          let settings: UIUserNotificationSettings =
+          UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+          application.registerUserNotificationSettings(settings)
+        }
+
+        application.registerForRemoteNotifications()
+
+        
+        Thread.sleep(forTimeInterval: 3)
         return true
     }
 
