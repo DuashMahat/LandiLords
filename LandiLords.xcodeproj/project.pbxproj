@@ -19,6 +19,16 @@
 		EE33C0C624C0A375005514A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE33C0C524C0A375005514A5 /* GoogleService-Info.plist */; };
 		EE33C0C824C0A9C4005514A5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33C0C724C0A9C4005514A5 /* SignUpViewController.swift */; };
 		EE33C0CA24C0CA10005514A5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33C0C924C0CA10005514A5 /* MainViewController.swift */; };
+		EE47FF5724C897B400D61403 /* viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE47FF5624C897B400D61403 /* viewModel.swift */; };
+		EE743F2824C1094D00B01615 /* MainTbController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE743F2724C1094D00B01615 /* MainTbController.swift */; };
+		EE743F2A24C1155000B01615 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE743F2924C1155000B01615 /* SettingsViewController.swift */; };
+		EE743F2C24C1156700B01615 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE743F2B24C1156700B01615 /* UserViewController.swift */; };
+		EE743F2E24C1165E00B01615 /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = EE743F2D24C1165E00B01615 /* Cities.json */; };
+		EE743F3124C2989200B01615 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE743F3024C2989200B01615 /* Cities.swift */; };
+		EE743F3324C2989C00B01615 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE743F3224C2989C00B01615 /* Networking.swift */; };
+		EEC0E56E24C3B9F600ACB233 /* reusable_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC0E56D24C3B9F600ACB233 /* reusable_extensions.swift */; };
+		EEDF8F1A24C4B8D00067B474 /* singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF8F1924C4B8D00067B474 /* singleton.swift */; };
+		EEDF8F6F24C66FA10067B474 /* ButtonBehaviours.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF8F6E24C66FA10067B474 /* ButtonBehaviours.swift */; };
 		FB671D858EF812239EDF5804 /* Pods_LandiLordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E506A5619DCA6991F15266F8 /* Pods_LandiLordsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +63,16 @@
 		EE33C0C524C0A375005514A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE33C0C724C0A9C4005514A5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EE33C0C924C0CA10005514A5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EE47FF5624C897B400D61403 /* viewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewModel.swift; sourceTree = "<group>"; };
+		EE743F2724C1094D00B01615 /* MainTbController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTbController.swift; sourceTree = "<group>"; };
+		EE743F2924C1155000B01615 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		EE743F2B24C1156700B01615 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		EE743F2D24C1165E00B01615 /* Cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
+		EE743F3024C2989200B01615 /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
+		EE743F3224C2989C00B01615 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		EEC0E56D24C3B9F600ACB233 /* reusable_extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reusable_extensions.swift; sourceTree = "<group>"; };
+		EEDF8F1924C4B8D00067B474 /* singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleton.swift; sourceTree = "<group>"; };
+		EEDF8F6E24C66FA10067B474 /* ButtonBehaviours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBehaviours.swift; sourceTree = "<group>"; };
 		F0D9AE60799FD88ADBBA2513 /* Pods-LandiLords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandiLords.debug.xcconfig"; path = "Target Support Files/Pods-LandiLords/Pods-LandiLords.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,9 +116,71 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE23F39324C1022A0099C4F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE743F3024C2989200B01615 /* Cities.swift */,
+				EE743F3224C2989C00B01615 /* Networking.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EE23F39424C1023B0099C4F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE33C0A624C09D54005514A5 /* Main.storyboard */,
+				EE33C0AE24C09D5B005514A5 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE23F39524C102420099C4F3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE33C0A424C09D54005514A5 /* LoginViewController.swift */,
+				EE33C0C724C0A9C4005514A5 /* SignUpViewController.swift */,
+				EE33C0C924C0CA10005514A5 /* MainViewController.swift */,
+				EE743F2724C1094D00B01615 /* MainTbController.swift */,
+				EE743F2924C1155000B01615 /* SettingsViewController.swift */,
+				EE743F2B24C1156700B01615 /* UserViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EE23F39624C1024B0099C4F3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE47FF5624C897B400D61403 /* viewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EE23F39724C102530099C4F3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				EEDF8F1924C4B8D00067B474 /* singleton.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		EE23F39824C1025A0099C4F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EEC0E56D24C3B9F600ACB233 /* reusable_extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		EE33C09424C09D54005514A5 = {
 			isa = PBXGroup;
 			children = (
+				EEDF8F6D24C66F720067B474 /* ButtonBehaviours */,
+				EE23F39824C1025A0099C4F3 /* Extensions */,
+				EE23F39724C102530099C4F3 /* Constants */,
+				EE23F39624C1024B0099C4F3 /* ViewModel */,
+				EE23F39524C102420099C4F3 /* Controllers */,
+				EE23F39424C1023B0099C4F3 /* View */,
+				EE23F39324C1022A0099C4F3 /* Model */,
 				EE33C09F24C09D54005514A5 /* LandiLords */,
 				EE33C0B924C09D5B005514A5 /* LandiLordsTests */,
 				EE33C09E24C09D54005514A5 /* Products */,
@@ -121,15 +203,11 @@
 			children = (
 				EE33C0A024C09D54005514A5 /* AppDelegate.swift */,
 				EE33C0A224C09D54005514A5 /* SceneDelegate.swift */,
-				EE33C0A424C09D54005514A5 /* LoginViewController.swift */,
-				EE33C0C724C0A9C4005514A5 /* SignUpViewController.swift */,
-				EE33C0A624C09D54005514A5 /* Main.storyboard */,
-				EE33C0C924C0CA10005514A5 /* MainViewController.swift */,
 				EE33C0AC24C09D5B005514A5 /* Assets.xcassets */,
-				EE33C0AE24C09D5B005514A5 /* LaunchScreen.storyboard */,
 				EE33C0B124C09D5B005514A5 /* Info.plist */,
 				EE33C0C524C0A375005514A5 /* GoogleService-Info.plist */,
 				EE33C0A924C09D54005514A5 /* LandiLords.xcdatamodeld */,
+				EE743F2D24C1165E00B01615 /* Cities.json */,
 			);
 			path = LandiLords;
 			sourceTree = "<group>";
@@ -141,6 +219,14 @@
 				EE33C0BC24C09D5B005514A5 /* Info.plist */,
 			);
 			path = LandiLordsTests;
+			sourceTree = "<group>";
+		};
+		EEDF8F6D24C66F720067B474 /* ButtonBehaviours */ = {
+			isa = PBXGroup;
+			children = (
+				EEDF8F6E24C66FA10067B474 /* ButtonBehaviours.swift */,
+			);
+			path = ButtonBehaviours;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +315,7 @@
 			files = (
 				EE33C0B024C09D5B005514A5 /* LaunchScreen.storyboard in Resources */,
 				EE33C0C624C0A375005514A5 /* GoogleService-Info.plist in Resources */,
+				EE743F2E24C1165E00B01615 /* Cities.json in Resources */,
 				EE33C0AD24C09D5B005514A5 /* Assets.xcassets in Resources */,
 				EE33C0A824C09D54005514A5 /* Main.storyboard in Resources */,
 			);
@@ -313,11 +400,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE33C0A524C09D54005514A5 /* LoginViewController.swift in Sources */,
+				EE743F2C24C1156700B01615 /* UserViewController.swift in Sources */,
+				EE743F2824C1094D00B01615 /* MainTbController.swift in Sources */,
 				EE33C0A124C09D54005514A5 /* AppDelegate.swift in Sources */,
+				EE743F3324C2989C00B01615 /* Networking.swift in Sources */,
+				EEDF8F6F24C66FA10067B474 /* ButtonBehaviours.swift in Sources */,
 				EE33C0A324C09D54005514A5 /* SceneDelegate.swift in Sources */,
+				EEC0E56E24C3B9F600ACB233 /* reusable_extensions.swift in Sources */,
+				EEDF8F1A24C4B8D00067B474 /* singleton.swift in Sources */,
 				EE33C0CA24C0CA10005514A5 /* MainViewController.swift in Sources */,
+				EE743F3124C2989200B01615 /* Cities.swift in Sources */,
 				EE33C0AB24C09D54005514A5 /* LandiLords.xcdatamodeld in Sources */,
 				EE33C0C824C0A9C4005514A5 /* SignUpViewController.swift in Sources */,
+				EE47FF5724C897B400D61403 /* viewModel.swift in Sources */,
+				EE743F2A24C1155000B01615 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
