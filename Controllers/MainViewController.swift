@@ -8,9 +8,7 @@
 
 
 /*
-   You also need to modify the user interface so it can react when the user scrolls down the list. When they get near the end of the list of loaded moderators, you need to request a new page.
-
-   Because network requests can take a long time, you need to improve the user experience by displaying a spinning indicator view if the moderator information is not yet available.
+     
  
  */
 
@@ -74,6 +72,7 @@ extension MainViewController {
         tableview.separatorColor = .blue
         tableview.delegate = self
         tableview.dataSource = self
+//        tableview.background()
         searchbarConroller.searchResultsUpdater = self
         searchbarConroller.searchBar.placeholder = navName
         searchbarConroller.obscuresBackgroundDuringPresentation = false
@@ -91,6 +90,7 @@ extension MainViewController : UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier , for: indexPath)
+        cell.editBackground()
         cell.textLabel?.text = isFiltered ? viewmodel.getArtatIndexAtFilered(index: indexPath.row).name : viewmodel.getArtatIndexMain(index: indexPath.row).name
         return cell 
     }
@@ -103,6 +103,7 @@ extension MainViewController : UITableViewDataSource  {
 extension MainViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         let st = isFiltered ? viewmodel.filteredStates[indexPath.row].abbreviation.lowercased() : viewmodel.states[indexPath.row].abbreviation.lowercased()
         guard let url = URL(string: UrlPath.path.firstpath + st + UrlPath.path.lastpath ) else {return}
         print(url)

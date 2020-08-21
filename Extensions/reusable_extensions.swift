@@ -27,3 +27,16 @@ extension UIImageView {
         
     }
 }
+
+extension UITableView {
+    func background() {
+        self.backgroundColor = .systemBlue
+    }
+}
+
+extension UITableViewCell {
+    func editBackground() {
+        self.backgroundColor = .systemBlue
+        self.textLabel?.textColor = .white
+    }
+}
