@@ -9,37 +9,37 @@
 import Foundation
 
 final class NetworkViewModel {
-    var articles = [Article]()
-    var filteredArticles = [Article]()
+    var states = [State]()
+    var filteredStates = [State]()
     var networking = Networking()
     var isFetchingResponse : Bool = false
     var currentIndex : Int = 1
-    func vmResponse ( url: String  , completion: @escaping (Articles) -> () ) {
-        networking.response(url: url) { [weak self] article in
-            self?.articles = article.articles
-            completion(article)
+    func vmResponse ( url: String  , completion: @escaping (States) -> () ) {
+        networking.response(url: url) { [weak self] states in
+            self?.states = states.states
+            completion(states)
         }
     }
-    func mainArticles () -> [Article] {
-       return articles
+    func mainStates () -> [State] {
+       return states
     }
     
-    func filteredArticled() -> [Article] {
-       return filteredArticles
+    func filteredStated () -> [State] {
+       return filteredStates
     }
     
     func Maincount() -> Int {
-        return articles.count
+        return states.count
     }
     func filteredCount() -> Int {
-        return filteredArticles.count
+        return filteredStates.count
     }
     
-    func getArtatIndexMain (index: Int ) -> Article {
-       return articles[index]
+    func getArtatIndexMain (index: Int ) -> State {
+       return states[index]
     }
     
-    func getArtatIndexAtFilered (index: Int ) -> Article {
-       return filteredArticles[index]
+    func getArtatIndexAtFilered (index: Int ) -> State {
+       return filteredStates[index]
     }
 }

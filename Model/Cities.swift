@@ -30,13 +30,13 @@ struct Article: Codable {
 }
 
 // MARK: - Source
-struct Source: Codable {
-    let id: ID?
-    let name: String
+
+
+
+struct States : Codable {
+    var states = [State]()
 }
 
-enum ID: String, Codable {
-    case engadget = "engadget"
-    case mashable = "mashable"
-    case techcrunch = "techcrunch"
+struct State : Codable {
+    let name , abbreviation : String
 }

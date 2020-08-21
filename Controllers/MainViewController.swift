@@ -25,18 +25,18 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableview : UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var viewmodel = NetworkViewModel()
+    var cellIdentifier : String {
+       return "cell"
+    }
+    var navName : String {
+       return "Enter State"
+    }
     var searchbarConroller = UISearchController(searchResultsController: nil)
     public enum indicatorColor {
         static let color : UIColor =  .white
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        activityIndicator.color = indicatorColor.color
-////        activityIndicator.startAnimating()
-////        tableview.isHidden = true
-//        tableview.separatorColor = .blue
-//        tableview.delegate = self
-//        tableview.dataSource = self
         forViewDidLoad()
         response()
         
@@ -44,11 +44,9 @@ class MainViewController: UIViewController {
     }
     
     func response () {
-        viewmodel.vmResponse(url: UrlPath.path.shared()) { [weak self](_) in
+        viewmodel.vmResponse(url: UrlPath.path.sharedStatesUrl()) { [weak self](_) in
             DispatchQueue.main.async {
                 self?.tableview.reloadData()
-//                self?.activityIndicator.stopAnimating()
-//                print(self?.viewmodel.articles)
             }
         
         }
@@ -57,10 +55,6 @@ class MainViewController: UIViewController {
     @IBAction func logOutAction(_ sender: UIBarButtonItem) {
         do {
             try Auth.auth().signOut()
-//              let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//              guard let loginVc = storyBoard.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else{return}
-//            loginVc.modalPresentationStyle = .fullScreen
-//              present(loginVc , animated: true)
             let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginViewController")
             self.appDelegate.window?.rootViewController = initialViewController
             self.appDelegate.window?.makeKeyAndVisible()
@@ -81,7 +75,7 @@ extension MainViewController {
         tableview.delegate = self
         tableview.dataSource = self
         searchbarConroller.searchResultsUpdater = self
-        searchbarConroller.searchBar.placeholder = "Enter author name"
+        searchbarConroller.searchBar.placeholder = navName
         searchbarConroller.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchbarConroller
         definesPresentationContext = true
@@ -96,8 +90,8 @@ extension MainViewController : UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell" , for: indexPath)
-        cell.textLabel?.text = isFiltered ? viewmodel.getArtatIndexAtFilered(index: indexPath.row).author : viewmodel.getArtatIndexMain(index: indexPath.row).author
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier , for: indexPath)
+        cell.textLabel?.text = isFiltered ? viewmodel.getArtatIndexAtFilered(index: indexPath.row).name : viewmodel.getArtatIndexMain(index: indexPath.row).name
         return cell 
     }
 }
@@ -107,8 +101,11 @@ extension MainViewController : UITableViewDataSource  {
 
 
 extension MainViewController : UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      guard let url = URL(string: "https://www.youtube.com/") else {return}
+        let st = isFiltered ? viewmodel.filteredStates[indexPath.row].abbreviation.lowercased() : viewmodel.states[indexPath.row].abbreviation.lowercased()
+        guard let url = URL(string: UrlPath.path.firstpath + st + UrlPath.path.lastpath ) else {return}
+        print(url)
       let svc = SFSafariViewController(url: url )
       present(svc, animated: true, completion: nil)
     }
@@ -132,8 +129,8 @@ extension MainViewController {
     }
     
     func filteredLocations (for searchText: String ) {
-        viewmodel.filteredArticles = viewmodel.articles.filter { searchtext in
-            return searchtext.author.lowercased().contains(searchText.lowercased())
+        viewmodel.filteredStates = viewmodel.states.filter { searchtext in
+            return searchtext.name.lowercased().contains(searchText.lowercased())
         }
         DispatchQueue.main.async {
             self.tableview.reloadData()

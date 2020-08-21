@@ -9,7 +9,7 @@
 import Foundation
 
 final class Networking {
-    func response (url: String , completion: @escaping (Articles) -> () ) {
+    func response (url: String , completion: @escaping (States) -> () ) {
         guard let url = URL(string: url) else {return}
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             self.urlCompletionHandler(data: data, response: response, error: error, completion: completion)
@@ -17,12 +17,12 @@ final class Networking {
     }
     
     
-    func urlCompletionHandler (data: Data? , response: URLResponse? , error: Error? , completion: @escaping (Articles) -> () ) {
+    func urlCompletionHandler (data: Data? , response: URLResponse? , error: Error? , completion: @escaping (States) -> () ) {
         guard let data = data else {return}
         do {
            let jsondecoder = JSONDecoder()
-           let articles = try jsondecoder.decode(Articles.self, from: data)
-           completion(articles)
+           let states = try jsondecoder.decode(States.self, from: data)
+           completion(states)
         } catch {
             print("error  \(error)")
         }
