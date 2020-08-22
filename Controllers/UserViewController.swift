@@ -17,7 +17,6 @@ class UserViewController: UIViewController {
     @IBOutlet weak var lastName: UILabel!
     let picker = UIImagePickerController()
    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         forViewDidLoad()
@@ -42,13 +41,13 @@ extension UserViewController  {
 
 extension UserViewController {
     func forSourceTypesAlerts () {
-        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Choose Image from", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
             self.openCamera()
         }))
 
-        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
-            self.openGallary()
+        alert.addAction(UIAlertAction(title: "Photo Gallery", style: .default, handler: { _ in
+            self.openPhotoGallary()
         }))
 
         alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
@@ -71,9 +70,9 @@ extension UserViewController : UIImagePickerControllerDelegate , UINavigationCon
     }
     
     func  openCamera()   {
-         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera))
+         if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera))
           {
-             picker.sourceType = UIImagePickerController.SourceType.camera
+              picker.sourceType = UIImagePickerController.SourceType.camera
               picker.allowsEditing = true
               self.present(picker, animated: true, completion: nil)
           }
@@ -85,7 +84,7 @@ extension UserViewController : UIImagePickerControllerDelegate , UINavigationCon
           }
         }
         
-    func openGallary() {
+    func openPhotoGallary() {
             picker.sourceType = UIImagePickerController.SourceType.photoLibrary
             picker.allowsEditing = true
             self.present(picker, animated: true, completion: nil)
