@@ -26,6 +26,7 @@
 		EE743F2E24C1165E00B01615 /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = EE743F2D24C1165E00B01615 /* Cities.json */; };
 		EE743F3124C2989200B01615 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE743F3024C2989200B01615 /* Cities.swift */; };
 		EE743F3324C2989C00B01615 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE743F3224C2989C00B01615 /* Networking.swift */; };
+		EE8F648424F184D000B54C46 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8F648324F184D000B54C46 /* Picker.swift */; };
 		EEC0E56E24C3B9F600ACB233 /* reusable_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC0E56D24C3B9F600ACB233 /* reusable_extensions.swift */; };
 		EEDF8F1A24C4B8D00067B474 /* singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF8F1924C4B8D00067B474 /* singleton.swift */; };
 		EEDF8F6F24C66FA10067B474 /* ButtonBehaviours.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF8F6E24C66FA10067B474 /* ButtonBehaviours.swift */; };
@@ -70,6 +71,7 @@
 		EE743F2D24C1165E00B01615 /* Cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
 		EE743F3024C2989200B01615 /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		EE743F3224C2989C00B01615 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		EE8F648324F184D000B54C46 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
 		EEC0E56D24C3B9F600ACB233 /* reusable_extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reusable_extensions.swift; sourceTree = "<group>"; };
 		EEDF8F1924C4B8D00067B474 /* singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleton.swift; sourceTree = "<group>"; };
 		EEDF8F6E24C66FA10067B474 /* ButtonBehaviours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBehaviours.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				EE33C0A624C09D54005514A5 /* Main.storyboard */,
 				EE33C0AE24C09D5B005514A5 /* LaunchScreen.storyboard */,
+				EE8F648324F184D000B54C46 /* Picker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				EE743F2824C1094D00B01615 /* MainTbController.swift in Sources */,
 				EE33C0A124C09D54005514A5 /* AppDelegate.swift in Sources */,
 				EE743F3324C2989C00B01615 /* Networking.swift in Sources */,
+				EE8F648424F184D000B54C46 /* Picker.swift in Sources */,
 				EEDF8F6F24C66FA10067B474 /* ButtonBehaviours.swift in Sources */,
 				EE33C0A324C09D54005514A5 /* SceneDelegate.swift in Sources */,
 				EEC0E56E24C3B9F600ACB233 /* reusable_extensions.swift in Sources */,

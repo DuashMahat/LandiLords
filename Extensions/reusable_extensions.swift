@@ -40,3 +40,14 @@ extension UITableViewCell {
         self.textLabel?.textColor = .white
     }
 }
+
+
+extension UIButton  {
+    func beautifyButton () {
+        
+    }
+    
+    func editButtoned () {
+        self.setImage(UIImage(named: "edit"), for: .normal)
+    }
+}
