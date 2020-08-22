@@ -41,7 +41,7 @@ extension UserViewController  {
 
 extension UserViewController {
     func forSourceTypesAlerts () {
-        let alert = UIAlertController(title: "Choose Image from", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Choose Profile Image", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
             self.openCamera()
         }))
