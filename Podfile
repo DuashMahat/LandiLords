@@ -12,6 +12,7 @@ target 'LandiLords' do
      pod 'TWMessageBarManager'
      pod 'Firebase/Auth'
      pod 'Firebase/Messaging'
+     pod 'Firebase/Storage'
      # add pods for any other desired Firebase products
      # https://firebase.google.com/docs/ios/setup#available-pods
      

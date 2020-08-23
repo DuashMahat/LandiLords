@@ -22,8 +22,8 @@ extension UIImageView {
         self.layer.borderWidth = 1
         self.layer.cornerRadius = self.frame.height/2
         self.clipsToBounds = true
-        self.layer.masksToBounds = false
-        self.contentMode = .scaleAspectFit
+        self.layer.masksToBounds = true
+        self.contentMode = .scaleAspectFill
         
     }
 }
