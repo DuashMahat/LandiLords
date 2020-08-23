@@ -6,8 +6,10 @@ protocol pickerImage {
 }
 
 open class imagePicker : NSObject {
-    private var pickercontroller = UIImagePickerController()
+    private var picker  = UIImagePickerController()
     var delegate : pickerImage?
+   
+    
     
 }
 
