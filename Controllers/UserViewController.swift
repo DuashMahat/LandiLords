@@ -16,7 +16,6 @@ class UserViewController: UIViewController {
     @IBOutlet weak var firstname: UILabel!
     @IBOutlet weak var lastName: UILabel!
     let picker = UIImagePickerController()
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         forViewDidLoad()
