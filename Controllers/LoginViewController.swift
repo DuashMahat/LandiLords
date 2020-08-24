@@ -13,6 +13,7 @@ import FirebaseDatabase
 import SVProgressHUD
 import TWMessageBarManager
 class LoginViewController: UIViewController {
+    
     public enum navTitle {
        static let title = "Login Page"
     }
@@ -22,6 +23,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var createBtn: UIButton!
     private var buttonBehavior : ButtonBehaviours!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var signInVm = SignInViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonBehavior = ButtonBehaviours(emailField: emailFields, passwordField: passwordField, onChangeEmail: { [unowned self] emailEnabled in
@@ -45,21 +47,22 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: UIButton) {
-        Auth.auth().signIn(withEmail: emailFields.text!, password: passwordField.text!) { (result, error) in
-            SVProgressHUD.show()
-            if error != nil {
-                SVProgressHUD.showError(withStatus:  error!.localizedDescription)
-                print("error \(String(describing: error))")
-            } else {
-                SVProgressHUD.dismiss()
-                let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "MainTbController")
-                self.appDelegate.window?.rootViewController = initialViewController
-                self.appDelegate.window?.makeKeyAndVisible()
+        if !signInVm.validateSignIn(email: emailFields.text, password: passwordField.text) {
+            SVProgressHUD.show(withStatus: "Enter details")
+        } else {
+            FireBaseManager.shared.signIn(email: emailFields.text!, password: passwordField.text!) { (error) in
+                if error != nil {
+                    SVProgressHUD.showError(withStatus: error?.localizedDescription  ?? "Incorrect Details")
+                } else {
+                    SVProgressHUD.showSuccess(withStatus: "Verified")
+                   let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "MainTbController")
+                   self.appDelegate.window?.rootViewController = initialViewController
+                   self.appDelegate.window?.makeKeyAndVisible()
+                }
             }
         }
-        
     }
-    
+   
     
     @IBAction func createAccountAction(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)

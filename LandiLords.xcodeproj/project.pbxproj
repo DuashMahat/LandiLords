@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6AC0BF2859A0D57E005D30AD /* Pods_LandiLords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60995F43E4652BEC1D2A5B70 /* Pods_LandiLords.framework */; };
+		EE2CE43124F2B50400C3399C /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2CE43024F2B50400C3399C /* FirebaseReference.swift */; };
+		EE2CE43324F31D9B00C3399C /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2CE43224F31D9B00C3399C /* SignInViewModel.swift */; };
+		EE2CE43524F320F300C3399C /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2CE43424F320F300C3399C /* SignUpViewModel.swift */; };
 		EE33C0A124C09D54005514A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33C0A024C09D54005514A5 /* AppDelegate.swift */; };
 		EE33C0A324C09D54005514A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33C0A224C09D54005514A5 /* SceneDelegate.swift */; };
 		EE33C0A524C09D54005514A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33C0A424C09D54005514A5 /* LoginViewController.swift */; };
@@ -49,6 +52,9 @@
 		A67161B3D9338CD36BBEC849 /* Pods-LandiLordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandiLordsTests.debug.xcconfig"; path = "Target Support Files/Pods-LandiLordsTests/Pods-LandiLordsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A9AE0501AFAAC203413273EB /* Pods-LandiLordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandiLordsTests.release.xcconfig"; path = "Target Support Files/Pods-LandiLordsTests/Pods-LandiLordsTests.release.xcconfig"; sourceTree = "<group>"; };
 		E506A5619DCA6991F15266F8 /* Pods_LandiLordsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LandiLordsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE2CE43024F2B50400C3399C /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
+		EE2CE43224F31D9B00C3399C /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		EE2CE43424F320F300C3399C /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		EE33C09D24C09D54005514A5 /* LandiLords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandiLords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE33C0A024C09D54005514A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE33C0A224C09D54005514A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				EE47FF5624C897B400D61403 /* viewModel.swift */,
+				EE2CE43224F31D9B00C3399C /* SignInViewModel.swift */,
+				EE2CE43424F320F300C3399C /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -174,9 +182,18 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		EE2CE42F24F2B47E00C3399C /* References */ = {
+			isa = PBXGroup;
+			children = (
+				EE2CE43024F2B50400C3399C /* FirebaseReference.swift */,
+			);
+			path = References;
+			sourceTree = "<group>";
+		};
 		EE33C09424C09D54005514A5 = {
 			isa = PBXGroup;
 			children = (
+				EE2CE42F24F2B47E00C3399C /* References */,
 				EEDF8F6D24C66F720067B474 /* ButtonBehaviours */,
 				EE23F39824C1025A0099C4F3 /* Extensions */,
 				EE23F39724C102530099C4F3 /* Constants */,
@@ -407,14 +424,17 @@
 				EE743F2824C1094D00B01615 /* MainTbController.swift in Sources */,
 				EE33C0A124C09D54005514A5 /* AppDelegate.swift in Sources */,
 				EE743F3324C2989C00B01615 /* Networking.swift in Sources */,
+				EE2CE43524F320F300C3399C /* SignUpViewModel.swift in Sources */,
 				EE8F648424F184D000B54C46 /* Picker.swift in Sources */,
 				EEDF8F6F24C66FA10067B474 /* ButtonBehaviours.swift in Sources */,
 				EE33C0A324C09D54005514A5 /* SceneDelegate.swift in Sources */,
 				EEC0E56E24C3B9F600ACB233 /* reusable_extensions.swift in Sources */,
+				EE2CE43124F2B50400C3399C /* FirebaseReference.swift in Sources */,
 				EEDF8F1A24C4B8D00067B474 /* singleton.swift in Sources */,
 				EE33C0CA24C0CA10005514A5 /* MainViewController.swift in Sources */,
 				EE743F3124C2989200B01615 /* Cities.swift in Sources */,
 				EE33C0AB24C09D54005514A5 /* LandiLords.xcdatamodeld in Sources */,
+				EE2CE43324F31D9B00C3399C /* SignInViewModel.swift in Sources */,
 				EE33C0C824C0A9C4005514A5 /* SignUpViewController.swift in Sources */,
 				EE47FF5724C897B400D61403 /* viewModel.swift in Sources */,
 				EE743F2A24C1155000B01615 /* SettingsViewController.swift in Sources */,

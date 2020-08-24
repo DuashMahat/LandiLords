@@ -17,28 +17,31 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var signUpVm = SignUpViewModel()
     @IBOutlet weak var signup: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         forViewDidLoad()
     }
+    
+    
     @IBAction func signUpAction(_ sender: UIButton) {
-         SVProgressHUD.show()
-        if firstName.text?.count == 0  || lastName.text?.count == 0 {
-            SVProgressHUD.showError(withStatus: "Enter Detals")
-        } else {
-            Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
-                             if error != nil {
-                                 SVProgressHUD.showError(withStatus: "Enter sign up")
-                             } else {
-                                 print("Registered")
-                                 SVProgressHUD.dismiss()
-                                 let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "MainTbController")
-                               self.appDelegate.window?.rootViewController = initialViewController
-                               self.appDelegate.window?.makeKeyAndVisible()
-                             }
-                         }
+        if !signUpVm.validateSignUp(firstname: firstName.text, lastname: lastName.text, email: email.text, password: password.text) {
+            SVProgressHUD.showError(withStatus: "Fill all details")
+        }
+        else {
+            SVProgressHUD.show()
+            FireBaseManager.shared.signUp(email: email.text!, password: password.text!) { (error) in
+                if error != nil {
+                    SVProgressHUD.showError(withStatus: error?.localizedDescription ?? "Error sign up")
+                } else {
+                     SVProgressHUD.dismiss()
+                    let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "MainTbController")
+                    self.appDelegate.window?.rootViewController = initialViewController
+                    self.appDelegate.window?.makeKeyAndVisible()
+                }
+            }
         }
     
     }
