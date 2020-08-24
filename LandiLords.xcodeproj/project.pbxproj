@@ -11,6 +11,7 @@
 		EE2CE43124F2B50400C3399C /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2CE43024F2B50400C3399C /* FirebaseReference.swift */; };
 		EE2CE43324F31D9B00C3399C /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2CE43224F31D9B00C3399C /* SignInViewModel.swift */; };
 		EE2CE43524F320F300C3399C /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2CE43424F320F300C3399C /* SignUpViewModel.swift */; };
+		EE2CE43724F4142E00C3399C /* SignOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2CE43624F4142E00C3399C /* SignOutViewModel.swift */; };
 		EE33C0A124C09D54005514A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33C0A024C09D54005514A5 /* AppDelegate.swift */; };
 		EE33C0A324C09D54005514A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33C0A224C09D54005514A5 /* SceneDelegate.swift */; };
 		EE33C0A524C09D54005514A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33C0A424C09D54005514A5 /* LoginViewController.swift */; };
@@ -55,6 +56,7 @@
 		EE2CE43024F2B50400C3399C /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
 		EE2CE43224F31D9B00C3399C /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		EE2CE43424F320F300C3399C /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		EE2CE43624F4142E00C3399C /* SignOutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewModel.swift; sourceTree = "<group>"; };
 		EE33C09D24C09D54005514A5 /* LandiLords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandiLords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE33C0A024C09D54005514A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE33C0A224C09D54005514A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				EE47FF5624C897B400D61403 /* viewModel.swift */,
 				EE2CE43224F31D9B00C3399C /* SignInViewModel.swift */,
 				EE2CE43424F320F300C3399C /* SignUpViewModel.swift */,
+				EE2CE43624F4142E00C3399C /* SignOutViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				EEDF8F1A24C4B8D00067B474 /* singleton.swift in Sources */,
 				EE33C0CA24C0CA10005514A5 /* MainViewController.swift in Sources */,
 				EE743F3124C2989200B01615 /* Cities.swift in Sources */,
+				EE2CE43724F4142E00C3399C /* SignOutViewModel.swift in Sources */,
 				EE33C0AB24C09D54005514A5 /* LandiLords.xcdatamodeld in Sources */,
 				EE2CE43324F31D9B00C3399C /* SignInViewModel.swift in Sources */,
 				EE33C0C824C0A9C4005514A5 /* SignUpViewController.swift in Sources */,

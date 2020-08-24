@@ -23,6 +23,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableview : UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var viewmodel = NetworkViewModel()
+    var signOutVm = SignOutViewModel()
     var cellIdentifier : String {
        return "cell"
     }
@@ -51,16 +52,18 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func logOutAction(_ sender: UIBarButtonItem) {
-        do {
-            try Auth.auth().signOut()
-            let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginViewController")
-            self.appDelegate.window?.rootViewController = initialViewController
-            self.appDelegate.window?.makeKeyAndVisible()
-        }
-        catch {
-            
-        }
-    }
+         do {
+                   try Auth.auth().signOut()
+                   let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginViewController")
+                   self.appDelegate.window?.rootViewController = initialViewController
+                   self.appDelegate.window?.makeKeyAndVisible()
+               }
+               catch {
+       
+               }
+     }
+    
+
 }
 
 

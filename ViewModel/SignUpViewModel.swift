@@ -12,6 +12,8 @@ class SignUpViewModel: NSObject {
 
 }
 
+
+
 extension SignUpViewModel {
    func validateSignUp ( firstname : String? , lastname : String? , email: String? , password : String? ) -> Bool {
        if let firstname = firstname , !firstname.isEmpty  , let lastname = lastname , !lastname.isEmpty , let email = email , !email.isEmpty , let password = password , !password.isEmpty {

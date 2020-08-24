@@ -20,6 +20,9 @@ final class FireBaseManager {
     private init() {}
 }
 
+
+// MARK: - Extensions for sign in , sign up and sign out  functionalities 
+
 extension FireBaseManager  {
    func signIn ( email : String  ,  password: String , completion: @escaping (Error?) -> () ) {
           Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
@@ -41,6 +44,15 @@ extension FireBaseManager  {
             } else {
                completion(nil)
             }
+        }
+    }
+    
+    func signOut (completion: @escaping (Bool) -> Void )  {
+        do {
+            try Auth.auth().signOut()
+            completion(true)
+        } catch {
+            completion(false)
         }
     }
 }
