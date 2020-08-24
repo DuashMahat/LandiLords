@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UrlPath {
+final class UrlPath {
     static let path = UrlPath()
     private init() {}
     var urlpath : String = "https://newsapi.org/v2/everything?q=apple&apiKey=413e01ed3481472c935caf2fcacbedc4&language=en&page=1"
